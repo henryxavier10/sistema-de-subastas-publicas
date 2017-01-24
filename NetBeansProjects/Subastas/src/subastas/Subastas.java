@@ -27,10 +27,6 @@ public class Subastas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        new Publisher().publishMessage("This message was published by PublisherOne");
-         new Publisher().publishMessage("This message was published by Publishertwo");
-        
     }
     
 }
