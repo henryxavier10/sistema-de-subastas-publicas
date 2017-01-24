@@ -47,4 +47,34 @@ public class Subscriber {
         // start the connection in order to receive messages
         connection.start();
     }
+    
+    public void closeConnection() throws JMSException {
+        connection.close();
+    }
+
+    public String getGreeting(int timeout) throws JMSException {
+
+        String greeting = NO_GREETING;
+
+        // read a message from the topic destination
+        Message message = messageConsumer.receive(timeout);
+
+        // check if a message was received
+        if (message != null) {
+            // cast the message to the correct type
+            TextMessage textMessage = (TextMessage) message;
+
+            // retrieve the message content
+            String text = textMessage.getText();
+            LOGGER.debug(clientId + ": received message with text='{}'", text);
+
+            // create greeting
+            greeting = "Hello " + text + "!";
+        } else {
+            LOGGER.debug(clientId + ": no message received");
+        }
+
+        LOGGER.info("greeting={}", greeting);
+        return greeting;
+    }
 }
