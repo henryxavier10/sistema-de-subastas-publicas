@@ -1,0 +1,13 @@
+1.-Resuma, en no más de un párrafo, lo leído.
+El artículo hace referencia a la innovación que hizo Google en internet en los últimos años, mencionando la contribución que sus empleados más importantes hicieron a la computación en la nube,Google es el Xerox PARC de la era de la computación en nube.
+
+2.-Liste las tres innovaciones de Google (mencionadas en el artículo) que a Ud. le parezca más importante.
+Google File System, MapReduce y BigTable
+
+3.-List la innovación de Google (mencionada en el artículo) que le pareza la de menos impacto. Justifique su respuesta.
+BigTable, fue una tecnología importante, pero comparado con GFS y MapReduce, es la que menos impacto provocó.
+GFS y MapReduce proporcionaron un medio más confiable de construir el índice masivo, que impulsa el motor de búsqueda de Google. A medida que Google rastreaba las páginas web del mundo, capturando información sobre cada uno, podría extender estos datos a través de decenas de miles de servidores usando GFS, y luego, con MapReduce, podría usar el poder de procesamiento dentro de todos esos servidores para comprimir los datos en un único, Índice de búsqueda.
+
+4.-Investigue en Internet sobre una innovación de Google en Sistemas Distribuidos que haya ocurrido posteriormente a la escritura del artículo de esta tarea, y explique por qué a Ud. le parece importante. Incluya en su respuesta el/los URL(s) de dónde obtuvo la información. 
+   
+

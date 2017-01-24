@@ -1,0 +1,173 @@
+En algún sitio de Google, un sitio web privado sirvió una lista de hechos sobre Dean, uno de los primeros empleados de Google y una de las principales razones por las que el gigante de la web maneja más tráfico que cualquier otra operación en la red. El sitio sólo estaba disponible para Googlers, pero todos fueron alentados a añadir sus propios hechos de Jeff Dean. Y muchos lo hicieron.
+
+"Jeff Dean una vez falló en una prueba de Turing cuando identificó correctamente el número 203 de Fibonacci en menos de un segundo", dijo uno.
+
+"Jeff Dean compila y ejecuta su código antes de enviar," leer otro ", pero sólo para comprobar si hay errores del compilador y de la CPU."
+
+"La velocidad de la luz en un vacío solía ser de unos 35 mph", dijo un tercero. "Entonces Jeff Dean pasó un fin de semana optimizando la física."
+
+No, estos hechos no eran realmente hechos. Pero sonaron verdad. April Fool's Day es una ocasión sagrada en Google, y como cualquier buena broma de April Fool, la mordaza se basa en la realidad. Un ingeniero de Google llamado Kenton Varda creó el sitio web, interpretando los satíricos hechos de Chuck Norris que tan a menudo rebotan alrededor de la red, y cuando envió el enlace al resto de la compañía, tuvo cuidado de ocultar su identidad. Pero pronto recibió una nota de Jeff Dean, que lo había rastreado después de descubrir las huellas digitales ocultas en los registros del servidor de Google.
+
+Dentro de Google, Jeff Dean es considerado con temor. Fuera de la empresa, pocos conocen su nombre. Pero deberían. Dean es parte de un pequeño grupo de ingenieros de Google que diseñaron el software y el hardware fundamentales que respaldaron el ascenso de la empresa a la fuerza dominante de la web, y ahora estas imitaciones son imitadas por el resto de los nombres más importantes de la red. Para llevar el camino de Google a las empresas más allá de la web.
+
+Una y otra vez, escuchamos la historia de Xerox PARC, el laboratorio de investigación de Silicon Valley que desarrolló casi todas las tecnologías principales detrás de la revolución de PC, desde la interfaz gráfica de usuario y la impresora láser hasta redes Ethernet y programación orientada a objetos. Pero debido a que Google está tan preocupado con mantener su último centro de datos de trabajo oculto de los competidores y porque los ingenieros como Jeff Dean no son exactamente promotores de auto el público en general es en gran medida inconsciente del impacto de Google sobre los cimientos de la computación moderna. Google es el Xerox PARC de la era de la computación en nube.
+
+
+"Google hizo un gran trabajo de slurping hasta algunos de los investigadores más talentosos en el mundo en un momento en lugares como Bell Labs y Xerox PARC estaban muriendo", dice Mike Miller, un profesor afiliado de física de partículas en la Universidad de Washington y el Científico jefe de Cloudant, una de las muchas compañías que trabajan para ampliar las tecnologías iniciadas por Google. "Se las arregló para agarrar no sólo a sus investigadores, sino también su vitalidad."
+
+Estas tecnologías de Google no son cosas que usted puede sostener en su mano - o incluso caber en su escritorio. No funcionan en un teléfono o una PC. Se ejecutan a través de una red mundial de centros de datos.
+
+Incluyen amplias plataformas de software con nombres como Google File System, MapReduce y BigTable, creaciones que potencian las aplicaciones en línea masivas dividiendo el trabajo en pedazos diminutos y extendiéndolos a través de miles de máquinas, al igual que las micro-tareas son repartidas a través de un enorme colonia de hormigas. Pero también incluyen servidores informáticos de nueva era, hardware de red y centros de datos que Google diseñó para trabajar en conjunto con este software. La idea es construir instalaciones de computación de tamaño de almacén que puedan pensar como una sola máquina. Así como una colonia de hormigas actúa como una entidad, lo mismo ocurre con un centro de datos de Google.
+
+
+Mientras Silicon Valley estaba paralizado por las redes sociales y las pantallas táctiles, Google rehizo las cosas detrás de escena, y pronto, como los otros gigantes de la web se toparon con su propia avalancha de datos en línea, siguieron el ejemplo de Google. Después de reinventar el motor de búsqueda de Google, GFS y MapReduce inspiraron a Hadoop, una plataforma masiva de cruce de números que ahora es uno de los proyectos de código abierto más exitosos del mundo. 
+
+
+
+Table ayudó a lanzar el movimiento NoSQL, generando un ejército de bases de datos de tamaño web. Y de muchas maneras, el nuevo enfoque de Google para el hardware del centro de datos generó esfuerzos similares de Facebook, Amazon, Microsoft y otros.
+
+Sin lugar a dudas, el ascenso de Google se basa en décadas de contribuciones de docenas de informáticos igualmente no anunciados de muchas compañías e instituciones de investigación, incluyendo PARC y Bell Labs. Y al igual que Google, Amazon también fue una influencia importante en los fundamentos de la red - sobre todo a través de un trabajo de investigación que publicó en un sistema de archivos llamado Dynamo. Pero la influencia de Google es mucho más amplia.
+
+La diferencia entre él y un Xerox PARC es que Google se benefició enormemente de sus creaciones antes de que el resto del mundo siguiera adelante. Herramientas como GFS y MapReduce ponen a la compañía por delante de la competencia, y ahora, ha descartado en gran medida estas herramientas, pasando a una nueva generación de software y hardware. Una vez más, el resto del mundo está luchando por ponerse al día.
+
+
+Deidades Gemelas de Google
+
+Kenton Varda podría haber atacado a otros ingenieros de Google con su broma del Día de los Inocentes. Jeff Dean sólo parecía "la opción más divertida", recuerda Varda. "Su comportamiento era quizás el más alejado de lo que uno esperaría de una deidad".
+
+La alternativa obvia fue Sanjay Ghemawat, el colaborador de Dean durante mucho tiempo. En 2004, Google publicó un documento de investigación sobre MapReduce, la plataforma de cruce de números que probablemente es la creación de centros de datos más influyente de la compañía, y el documento enumera a dos autores: Dean y Ghemawat. Los dos ingenieros también desempeñaron un papel importante en el diseño de la base de datos BigTable. Y Ghemawat es uno de los tres nombres en el documento que describe el primer sistema de archivos de Google, una forma de almacenar datos en la vasta red de centros de datos de la compañía.
+
+Incluso para Varda, que trabaja en el equipo que supervisa la infraestructura de Google, los dos ingenieros son difíciles de separar. "Jeff y Sanjay trabajaron juntos para desarrollar gran parte de la infraestructura de Google y siempre han parecido básicamente unidos en la cadera", dice Varda. "A menudo es difícil distinguir cuál de ellos realmente hizo qué.
+
+
+"Todos los cambios de código en Google requieren la revisión por pares antes de la presentación, pero en el caso de Jeff y Sanjay, a menudo uno enviará una gran revisión de código a la otra, y el otro inmediatamente 'LGTM', porque escribieron el cambio juntos en el Primer lugar ". LGTM es Google-hablar por" me parece bien ".
+
+Varda lo dice literalmente. Con el paso de los años, Dean y Ghemawat hicieron un hábito de codificar juntos mientras estaban sentados en la misma máquina. Normalmente, Ghemawat realiza el mecanografiado. "Él es pickier sobre su espaciamiento", dice Dean.
+
+Los dos se reunieron antes de llegar a Google. En los años 90, ambos trabajaron en los laboratorios de investigación del Valle del Silicio dirigidos por Digital Equipment Corporation, un gigante informático de la era pre-internet. Dean estaba en el Laboratorio de Investigación Occidental de DEC en Palo Alto, California, y Ghemawat trabajó a dos manzanas de distancia, en un laboratorio hermano llamado el Centro de Investigación de Sistemas. A menudo colaboraban en proyectos, no sólo porque Dean tenía algo para la tienda de helados que se encontraba entre los dos laboratorios, sino porque trabajaban bien juntos. En DEC, ayudaron a construir un nuevo compilador para el lenguaje de programación de Java y un generador de perfiles del sistema que rehizo la manera que seguimos el comportamiento de los servidores de computadora.
+
+Llegaron a Google como parte de una migración masiva del brazo de investigación de DEC. A finales de los años noventa, cuando Google estaba saliendo del suelo, DEC estaba en sus últimas piernas. Hizo servidores de computadoras grandes y robustos usando microprocesadores basados ​​en la arquitectura RISC y el mundo se estaba moviendo rápidamente hacia máquinas de bajo costo equipadas con chips x86 de Intel. En 1998, DEC fue adquirida por el gigante informático Compaq. Cuatro años más tarde, Compaq se fusionó con HP. Y los principales ingenieros de la aclamada operación de investigación de DEC se trasladaron gradualmente a otros lugares.
+
+"Los laboratorios de DEC estaban pasando por un período de roca poco después de la adquisición de Compaq", dice Dean, "y no estaba claro qué papel tendría la investigación en la empresa fusionada." Algunos ingenieros fueron a Microsoft, que estaba comenzando un nuevo Operación de investigación en Silicon Valley. Algunos acudieron a una nueva planta de Palo Alto llamada VMware, cuyos servidores virtuales estaban a punto de convertir el centro de datos al revés. Y muchos fueron a Google, fundados el mismo año en que DEC fue adquirido por Compaq.
+
+Fue un momento en que varios de los laboratorios de investigación más influyentes del mundo de la tecnología estaban perdiendo fuerza, incluyendo Xerox PARC y Bell Labs, el lugar que produjo tecnologías tan importantes como el sistema operativo UNIX y el lenguaje de programación C. Pero aunque estos laboratorios ya habían visto sus mejores días, muchos de sus investigadores alimentarían una nueva revolución.
+
+"En el momento de la explosión de la burbuja en 2001, cuando todo el mundo estaba reduciendo, incluyendo DEC, las dos principales empresas de alta tecnología que estaban contratando fueron Google y VMware", dice Eric Brewer, de la Universidad de California en Berkeley profesor de ciencias de la computación que ahora Trabaja junto a Dean y Ghemawat. "Debido a la locura de la oferta y la demanda, ambas compañías contrataron a mucha gente realmente grande y ambos han hecho bien en parte debido a ese factor".
+
+
+Al igual que Dean y Ghemawat, varios otros ingenieros que llegaron a Google desde DEC ayudarían a diseñar tecnologías que causaron un cambio sísmico en la web como un todo, incluyendo a Mike Burrows, Shun-Tak Leung y Luiz André Barroso. En ese momento, estos ingenieros sólo estaban buscando un trabajo interesante - y Google sólo estaba buscando personas inteligentes para ayudar a ejecutar su motor de búsqueda. Pero en retrospectiva, la migración masiva de DEC proporciona la metáfora ideal para los cambios que Google desembarcó en el resto del mundo.
+
+--------------------------
+DEC fue una de las primeras empresas en construir un motor de búsqueda web exitoso - AltaVista, que salió del Western Research Lab - y al menos al principio, todo funcionó en una sola máquina DEC. Pero Google eclipsó AltaVista en gran parte porque convirtió este modelo en su cabeza. En lugar de usar máquinas grandes y robustas para ejecutar su motor de búsqueda, rompió su software en pedazos y se extendió a través de un ejército de máquinas pequeñas y baratas. Esta es la idea fundamental detrás de GFS, MapReduce y BigTable - y tantas otras tecnologías de Google que podrían cambiar el statu quo.
+------------------------
+
+En retrospectiva, fue una progresión natural. "Los desafíos arquitectónicos que surgen cuando se construye un sistema de datos como Google que abarca miles de ordenadores no es tan diferente de los desafíos que surgen en la construcción de un sofisticado sistema monolítico", dice Armando Fox, profesor de ciencias de la computación en la Universidad de California, Berkeley, que se especializa en computación a gran escala. "Ellos usan ropa muy similar, y por eso era esencial tener gente con experiencia en lugares como DEC".
+
+Traductor de GoogleDesactivar traducción instantánea
+Jeff Dean sigue su tío a Google
+
+Jeff Dean fue el primero en llegar desde DEC. Llegó por su "tío académico", Urs Hölzle.
+
+Hölzle fue uno de los primeros 10 empleados de Google y, como primer vicepresidente de ingeniería, supervisó la creación de la infraestructura de Google, que ahora abarca más de 35 centros de datos en todo el mundo, a juzgar por fuentes externas. Se unió a Google de una cátedra en la Universidad de California en Santa Bárbara, y antes de eso, estudió en Stanford bajo un prof llamado David Ungar, el desarrollo de algunas de las principales tecnologías utilizadas en los compiladores de hoy para el lenguaje de programación Java.
+
+El consejero académico de Dean también estudió con Ungar, y esto hizo a Hölzle su tío académico. En 1999, con DEC en su agonía, Dean dejó la compañía para un startup llamado MySimon, pero cuando vio a Hölzle aparecer en Google, envió un correo electrónico en busca de un nuevo trabajo de Google propio. Pronto fue contratado por el mismo hombre que contrató a Hölzle: Google co-fundador Larry Page.
+
+
+Urs Hölzle. De archivo: Urs Hölzle
+Al principio, Dean fue acusado de construir un sistema de anuncios para el incipiente motor de búsqueda de Google. Pero después de unos meses, se trasladó a las principales tecnologías de búsqueda de la compañía, que ya se agachaban bajo el peso de una web en rápido crecimiento en todo el mundo. Pronto se unió a Ghemawat, quien hizo la mudanza a Google en gran parte porque Dean y otros investigadores de DEC - Krishna Bharat y Monika Henzinger - ya estaban a bordo.
+
+"Es bastante probable que nunca podría haber entrevistado en Google si Jeff no había estado allí", dice Ghemawat. Rápidamente recogieron donde dejaron en DEC. Durante los próximos tres o cuatro años, junto con un grupo siempre cambiante de otros ingenieros, los dos ingenieros diseñaron y construyeron múltiples revisiones de los principales sistemas de la compañía para rastrear la web, indexarla y ofrecer resultados de búsqueda a usuarios de todo el mundo.
+
+Sí, codificarían a menudo en la misma máquina - mientras bebían una cantidad tremenda de café. Cappuccino es su droga de la opción. Su asociación funciona, dice Dean, porque Ghemawat está más nivelado. "Tiendo a ser muy impaciente, pensando en todas las maneras en que podemos hacer algo, mi mente y las manos girando a un ritmo muy rápido. Sanjay se excita, pero de una manera más moderada. Corrige mi rumbo, para que acabemos en la dirección correcta.
+
+Pero Ghemawat dice que el enfoque de Dean es igual de importante. Él los mantiene avanzando. "A menudo me caigo, pensando en todas las formas diferentes de hacer algo, preocupándome por el camino correcto", dice Ghemawat. "Es bueno tener a alguien con la energía y la emoción necesarias para llegar al objetivo final".
+----------------------------
+Los grandes avances se produjeron con la creación de Google File System y MapReduce, que se extendió a través de los centros de datos de Google en la primera parte de la última década. Estas plataformas proporcionaron un medio más confiable de construir el índice masivo que impulsa el motor de búsqueda de Google. A medida que Google rastreaba las páginas web del mundo, capturando información sobre cada uno, podría extender estos datos a través de decenas de miles de servidores usando GFS, y luego, con MapReduce, podría usar el poder de procesamiento dentro de todos esos servidores para comprimir los datos en un único, Índice de búsqueda.
+-------------------------------
+
+El truco es que estas plataformas no se rompían cuando las máquinas fallaban o la red se ralentizaba. Cuando se trata de diez de miles de servidores comunes como Google, las máquinas fallan todo el tiempo. Con GFS y MapReduce, la empresa podría duplicar datos en varias máquinas. Si uno se rompía, otro estaba allí para intervenir.
+
+"La escala del trabajo de indexación hizo complicado hacer frente a los fallos de máquina y los retrasos, así que empezamos a buscar abstracciones que permitirían la paralelización automática a través de una colección de máquinas - para dar mayor rendimiento y escalabilidad - Cálculos que se ejecutaron en miles de máquinas robustas y confiables ", dice Jeff Dean, al describir el pensamiento detrás de MapReduce. Una vez que estas herramientas estaban en su lugar en el motor de búsqueda, explica, Google se dio cuenta de que podría ayudar a ejecutar otros servicios web también.
+-----------------------------------
+BigTable surgió de manera similar. Como MapReduce, funcionó encima del sistema de archivos de Google, pero no procesó datos. Funcionó como una enorme base de datos. "Se encarga de filas de datos", dice Dean, "y se extiende a través de más y más máquinas como usted lo necesita." No le dio tanto control sobre los datos como una base de datos relacional tradicional, pero podría manejar grandes cantidades De la información de manera que no podría con las plataformas diseñadas para una sola máquina.
+-----------------------------------
+La misma historia aparece una y otra vez. A medida que creció, Google enfrentó una cantidad sin precedentes de datos, y se vio obligado a construir un nuevo software.
+
+"¿Qué haces cuando tu trabajo es tomar todo el Internet, indexarlo y hacer una copia de él - y no hacerlo de una manera que la copia es del mismo tamaño que el Internet? Ese es un reto técnico bastante interesante ", dice Jason Hoffman, el director de tecnología de Joyent. "Muy a menudo el swinger del martillo sabe hacer el martillo. La mayoría de las cosas innovadoras provienen de una fragua. Vienen de aquellos puntos en los que te enfrentas al fracaso ".
+
+El centro de datos Empire construido sobre Crème Brûlée
+
+Luiz André Barroso siguió a Jeff Dean y Sanjay Ghemawat de DEC a Google. Pero casi no lo hizo.
+
+Barroso había trabajado junto a Dean en el Western Research Lab de DEC, y en 2001 estaba sopesando las ofertas de trabajo de Google y VMware. Después de visitar y entrevistar a ambas compañías, él juntó una hoja de balance que enumeraba las razones de ensamblar cada uno. Pero la hoja de cálculo terminó en un estado de inactividad: 122 razones para Google y 122 para VMware.
+
+Luego habló con Dean, quien preguntó si la hoja de cálculo incluía la crème brûlée servida por el jefe ejecutivo Charlie Ayers el día que visitó Google. "Crème brûlée es su favorito absoluto", recuerda Dean. "Le pregunté si lo había incluido en su lista de 122 puntos, y él dijo:" ¡No! ¡He olvidado! ' "Barroso aceptó la oferta de trabajo de Google a la mañana siguiente.
+
+Barroso era inusual porque no era necesariamente un ingeniero de software. En DEC, ayudó a los procesadores multicore pionero - procesadores que son en realidad muchos procesadores en uno. Pero después de que Barroso trabajó brevemente en el software de Google, Hölzle lo puso a cargo de un esfuerzo por revisar la infraestructura de hardware de Google, incluyendo no sólo sus servidores y otros equipos informáticos, sino los centros de datos que alojan todo ese hardware. "Yo era lo más cercano que teníamos a una persona de hardware", recuerda Barroso.
+
+
+Hölzle, Barroso, y su "equipo de plataformas" comenzaron por repensar los servidores de la compañía. En 2003, en lugar de comprar máquinas estándar de Dell y HP, el equipo comenzó a reducir costos mediante el diseño de sus propios servidores y luego contratar con fabricantes en Asia para construirlos - los mismos fabricantes que estaban construyendo equipo para los Dells y los HPs. En resumen, Google cortó a los hombres del medio.
+
+Unicamente, cada máquina de Google incluyó su propia batería de 12 voltios que podría recoger la holgura si el sistema perdió su fuente principal de energía. Esto, de acuerdo con Google, fue significativamente más eficiente que equipar el centro de datos con los UPS masivos - fuentes de alimentación ininterrumpibles - que normalmente proporcionan energía de respaldo dentro de las instalaciones de computación del mundo.
+
+Entonces el equipo fue a trabajar en los centros de datos que alojan estos servidores. En ese momento, Google simplemente arrendó el espacio del centro de datos de otras compañías. Pero Barroso y la tripulación empezaron desde cero, diseñando y construyendo sus propios centros de datos en un esfuerzo por ahorrar dinero y poder, pero también para mejorar el rendimiento de los servicios web de Google.
+
+La compañía comenzó con una nueva instalación en The Dalles, Oregón, es decir, la zona rural donde podría aprovechar algún poder económico - y algunos recortes impositivos graves. Pero el objetivo principal era construir un centro de datos entero que se comportara como una sola máquina. Barroso y Hölzle lo llaman "computación a escala de almacén".
+
+"Gran parte de los recursos de hardware y software en estas instalaciones deben trabajar en conjunto para ofrecer eficientemente buenos niveles de rendimiento del servicio de Internet, algo que sólo puede lograrse mediante un enfoque holístico de su diseño y despliegue", Barroso y Hölzle en su seminario 2009 Libro sobre el tema, El Datacenter como una computadora. "En otras palabras, debemos tratar el centro de datos como un enorme ordenador a escala de almacén".
+
+Ellos diseñaron la instalación usando un nuevo tipo de edificio. Ellos empaquetaron servidores, equipos de red y otro hardware en contenedores de envío estándar - el mismo tipo usado para transportar mercancías por barco y tren - y estos "módulos" del centro de datos podrían ser reconstruidos en una instalación mucho más grande. El objetivo era maximizar la eficiencia de cada módulo. Aparentemente, la noción llegó a Larry Page en 2003, cuando vio a Internet Achieve dar una presentación sobre sus planes para módulos similares - aunque Barroso no recuerda de dónde vino la idea. "Aparte de que no era yo", dice.
+
+La instalación de la compañía en The Dalles se puso en marcha en 2005. A lo largo de los años, hubo rumores de módulos de centros de datos y servidores personalizados, pero los detalles permanecieron ocultos hasta 2009, cuando Google celebró una miniconferencia en su sede en Silicon Valley. En el centro de datos, Google no se limita a innovar. Mantiene las innovaciones extremadamente silenciosas hasta que es bueno y listo para compartirlas con el resto del mundo.
+
+El efecto Tesla
+
+Larry Page tiene algo para Nikola Tesla. Según Steven Levy, detrás de las escenas ver a Google - En The Plex - Page considerado Tesla como un inventor a la par con Edison, pero siempre lamentó su incapacidad para convertir sus invenciones en ganancias y reconocimiento a largo plazo.
+
+Claramente, la historia cautelosa de Nicola Tesla influyó en la forma en que Google maneja sus tecnologías principales. Se los trata como secretos comerciales, y al igual que Apple, la empresa tiene un don para mantenerlos en secreto. Pero en algunos casos, después de que una tecnología se ejecuta dentro de Google durante varios años, la compañía abrirá el kimono. "Tratamos de ser lo más abiertos posible, sin renunciar a nuestra ventaja competitiva", dice Hölzle. "Vamos a comunicar la idea, pero no la implementación."
+------------------------------------
+En 2003 y 2004, la compañía publicó artículos sobre GFS y MapReduce. Google dejó los papeles hablar por sí mismos, y en poco tiempo, un desarrollador llamado Doug Cutting los usó para construir un sistema de indexación para un motor de búsqueda de código abierto que llamó Nutch. Después de que Cutting se uniera a Yahoo - el principal rival de búsqueda de Google en ese momento - el proyecto se transformó en Hadoop.
+-------------------------------------
+
+
+-----------------------------------
+Hadoop ha sido utilizado por los otros gigantes de la web, incluyendo Facebook, Twitter y Microsoft, y ahora se está extendiendo a otros negocios. Para el año 2016, según el equipo de investigación IDC, el proyecto alimentará un mercado de software de 813 millones de dólares.
+-----------------------------------
+La historia se repitió con BigTable. En 2006, Google publicó un documento sobre su extensa base de datos y, junto con un documento de Amazon que describe una tienda de datos llamada Dynamo, generó el movimiento NoSQL, un esfuerzo generalizado para construir bases de datos que podrían escalar a miles de máquinas.
+-----------------------------------
+"Si nos fijamos en todas las soluciones NoSQL, todo el mundo se remonta al papel de Amazon Dynamo o al papel de Google BigTable", dice Jason Hoffman, de Joyent. "¿Cómo sería el mundo si nadie en Google o Amazon alguna vez escribió un trabajo académico?"
+
+La operación de hardware de Google es una historia ligeramente diferente. Todavía sabemos relativamente poco sobre el interior de los centros de datos de Google, pero los esfuerzos de la compañía para diseñar y construir su propio equipo, sin duda, ha inspirado esfuerzos similares a través de la web y más allá. Facebook ahora está diseñando sus propios servidores, bastidores para servidores y equipos de almacenamiento, con la ayuda de fabricantes en Asia. De acuerdo con fuentes externas, los gustos de Amazon y Microsoft están haciendo lo mismo. Y con Facebook "open sourcing" sus diseños bajo la égida de la Open Compute Foundation, muchas otras empresas están explorando hardware similar.
+
+Es más, los centros de datos modulares son ahora un pilar de la web. Microsoft los utiliza, al igual que eBay e innumerables otros. Mike Manos, ex gurú del centro de datos de Microsoft, niega que Google haya sido la inspiración para el traslado al centro de datos modular, señalando que los módulos similares datan de la década de 1960, pero fue Google quien llevó la idea a la vanguardia. Como señala Mike Miller de Cloudant, GFS y MapReduce también dependen de las ideas del pasado. Pero Google tiene la habilidad para aplicar estas viejas ideas a problemas muy nuevos.
+
+El pasado de Google es prólogo
+----------------------
+La ironía es que Google ya ha reemplazado muchas de estas tecnologías seminales. En los últimos años, cambió GFS por una nueva plataforma llamada Colossus, y en la construcción de su índice de búsqueda, utiliza un nuevo sistema conocido como Caffeine, que incluye parte de MapReduce y opera de una manera muy diferente, actualizando el Índice en tiempo real en lugar de reconstruir la cosa desde cero.
+----------------------------
+Google todavía puede utilizar los módulos de centro de datos en The Dalles, pero parece que ya no juegan un papel en sus nuevas instalaciones. No sabemos mucho acerca de lo que la empresa ahora utiliza dentro de estas instalaciones secretas, pero usted puede apostar su un paso por delante de lo que hizo en el pasado.
+-------------------------------
+En los últimos años, Google publicó artículos sobre Caffeine y otras dos plataformas de software que sustentan sus servicios: Pregel, una base de datos gráfica para mapear las relaciones entre los datos y Dremel, un medio para analizar grandes cantidades de datos a super altas velocidades. Varios proyectos de código abierto ya están trabajando para imitar a Pregel. Al menos uno está clonando Dremel. Y Miller de Cloudant dice Caffeine - alias Percolator - está generando cambios en los mercados de Hadoop y NoSQL.
+----------------------------------
+Estas son sólo algunas de las últimas creaciones en uso en Google. Sin duda, hay muchos otros que no conocemos. Pero lo que Google está utilizando ahora, pronto se moverá encendido. En mayo del año pasado, el profesor de la Universidad de California en Berkeley, Eric Brewer, anunció que se uniría al equipo que construye la infraestructura "next gen" de Google. "La nube es joven", dijo. "Mucho que hacer. Muchos se fueron para llegar.
+
+
+
+Brewer, uno de los gigantes de la investigación en computación distribuida, es otra señal de que Google es el sucesor moderno de Xerox PARC. Pero la empresa también lleva el ethos PARC un paso más allá.
+
+Usted puede rastrear la operación de investigación de Google a través de DEC, todo el camino de regreso a los primeros días de PARC. El DEC Systems Research Center fue fundado por Robert Taylor, el mismo hombre que lanzó el laboratorio de informática en PARC.
+
+Taylor comenzó el SRC porque él sentía que por los años 80 tempranos, PARC había perdido su manera. "Muchas personas con las que trabajé en PARC nos sentimos tan desencantados con PARC como yo", dice. "Así que se unieron a mí". Trabajó para construir el laboratorio a la imagen del antiguo Laboratorio de Ciencias de la Computación de PARC, incluso en términos de su configuración física, y de alguna manera lo consiguió.
+
+Pero sufrió las mismas limitaciones que tantas operaciones de investigación corporativa. Tomó siglos para obtener la investigación en el mercado. Esto también fue cierto en el DEC Western Research Lab, donde Jeff Dean trabajó. Y esto es lo que lo llevó a Google. "En última instancia, fue esta frustración de estar un nivel alejado de los usuarios reales usando mi trabajo que me llevó a querer ir a un arranque", dice Dean.
+
+Pero Google no era el típico arranque. La empresa evolucionó de una manera que le permitió combinar el reto de la investigación con la satisfacción de poner en acción los resultados instantáneamente. Google fue una operación de investigación - y, sin embargo, no lo fue. "El trabajo de infraestructura de Google no fue realmente visto como investigación", dice Ghemawat. "Se trataba de cómo resolver los problemas que estamos viendo en la producción."
+
+Para algunos, el inconveniente de trabajar en la infraestructura principal de Google es que no se puede decir a nadie lo que estás haciendo. Esta es una de las razones por las que un ingeniero llamado Amir Michael dejó Google para construir servidores en Facebook. Pero, sí, hay momentos en que los ingenieros se sueltan para publicar su trabajo o incluso discutirlo en público.
+
+Para Google, es un acto de equilibrio. Aunque algunos son críticos de la balanza particular, sin duda está trabajando para Google. Y no se puede negar que sus métodos han impulsado el resto de la web hacia adelante. PARC nunca lo tuvo tan bueno.
+
+
+
+
+
