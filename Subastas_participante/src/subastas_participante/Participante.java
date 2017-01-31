@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package subastas;
+package subastas_participante;
 
 /**
  *
@@ -13,7 +13,6 @@ public class Participante {
     public String nombre;
     public double valor_oferta;
     public double capital;
-    
     
     public Participante(String nombre, double valor_oferta, double capital) {
         this.nombre = nombre;
