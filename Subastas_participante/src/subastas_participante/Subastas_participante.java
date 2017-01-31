@@ -44,8 +44,8 @@ public class Subastas_participante {
                             case 1: 
                                     String part="";
                                     System.out.println("");
-                                    //part=Registrar_participante();
-                                    //Ver_list_subastas(part);
+                                    part=Registrar_participante();
+                                    Ver_list_subastas(part);
                                     break;
                             case 0: 
                                     System.out.println("Adios!");
@@ -77,7 +77,20 @@ public class Subastas_participante {
         return participante.nombre;
     }
     
-    
+    public static void Ver_list_subastas(String p ){
+        System.out.println("**********************************************************************************************");
+        System.out.println("**********************************************************************************************"); 
+        System.out.println("**************************************BIENVENIDO "+p+"**********************************************");
+        System.out.println("**********************************************************************************************");
+        System.out.println("**********************************************************************************************");
+        
+        
+        System.out.println("Subastas:");
+        nombre_participante= new Scanner(System.in).nextLine();
+        Participante participante = new Participante(nombre_participante);
+        System.out.println("Ingrese la subasta a participar:"+participante.nombre);
+        //return participante.nombre;
+    }
 }
 
 
