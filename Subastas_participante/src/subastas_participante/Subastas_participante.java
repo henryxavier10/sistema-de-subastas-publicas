@@ -60,7 +60,22 @@ public class Subastas_participante {
                             System.out.println("Error!");
                     }
 	}
-    }    
+    }
+    
+    public static String Registrar_participante(){
+        System.out.println("**********************************************************************************************");
+        System.out.println("**********************************************************************************************"); 
+        System.out.println("**************************************REGISTRAR**********************************************");
+        System.out.println("**********************************************************************************************");
+        System.out.println("**********************************************************************************************");
+        
+        
+        System.out.println("Ingrese su nombre:");
+        nombre_participante= new Scanner(System.in).nextLine();
+        Participante participante = new Participante(nombre_participante);
+        System.out.println("nombre del participante:"+participante.nombre);
+        return participante.nombre;
+    }
     
     
 }
