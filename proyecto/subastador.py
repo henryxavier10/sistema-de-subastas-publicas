@@ -1,6 +1,7 @@
 from pub import *
 from sub import *
 from settings import r
+import time 
 
 nombre_subastador=""
 canales=[]
@@ -62,7 +63,7 @@ def crear_subasta(nombre_subastador):
 	   		menu_principal(nombre_subastador)
 	   	else:
 	   		canal="subastas"
-	   		mensaje="Subasta "+canal_subasta+"creada por"+nombre_subastador+"esta abierta"
+	   		mensaje="Subasta "+canal_subasta+" creada por "+nombre_subastador+" esta abierta"
 	   		r.publish(canal, mensaje)
 	   		ver_subastas(canal, mensaje,canal_subasta,nombre_subastador)
 
@@ -70,35 +71,6 @@ def ver_subastas(canal,mensaje,canal_subasta,nombre_subastador):
 	print ("*************************************************************")
 	print ("*************************************************************")
 	print ("***********************MI SUBASTA****************************")
-	print ("*************************"+canal_subasta+"*****************")
-	print ("*************************************************************")
-	print ("Ingrese <terminar> para dar por terminada la subasta")
-	
-	opcion =True
-	while opcion:
-		producto=raw_input("Ingrese descripcion del producto\n")
-		precio=raw_input("Ingrese precio del producto\n")
-		
-		if producto =="salir" or precio =="salir":
-			menu_principal(nombre_subastador)
-		else:
-			if producto=="" or precio=="":
-				print("\n Ingrese informacion valida")
-			else:
-		   		canal=canal_subasta
-		   		mensaje="Procducto: "+producto+"\nPrecio: "+precio
-		   		r.publish(canal, mensaje)
-
-		   		pubsub = r.pubsub()
-				pubsub.subscribe("canal_subasta")
-				while True:
-					for item in pubsub.listen():
-						print item['data']
-
-def ver_ofertas(canal,mensaje,canal_subasta,nombre_subastador):
-	print ("*************************************************************")
-	print ("*************************************************************")
-	print ("***********************ESPERANDO PUJAS***********************")
 	print ("*************************"+canal_subasta+"*****************")
 	print ("*************************************************************")
 	print ("Ingrese <salir> para regresar")
@@ -114,16 +86,34 @@ def ver_ofertas(canal,mensaje,canal_subasta,nombre_subastador):
 			if producto=="" or precio=="":
 				print("\n Ingrese informacion valida")
 			else:
-		   		canal=canal_subasta
 		   		mensaje="Procducto: "+producto+"\nPrecio: "+precio
-		   		r.publish(canal, mensaje)
+		   		r.publish(canal_subasta, mensaje)
+		   		ver_pujas(canal,mensaje,canal_subasta,nombre_subastador)
 
-		   		pubsub = r.pubsub()
-				pubsub.subscribe("canal_subasta")
-				while True:
-					for item in pubsub.listen():
-						print item['data']
 
+def ver_pujas(canal,mensaje,canal_subasta,nombre_subastador):
+	print ("*************************************************************")
+	print ("*************************************************************")
+	print ("***********************ESPERANDO PUJAS***********************")
+	print ("*************************"+canal_subasta+"*****************")
+	print ("*************************************************************")
+	con=0
+	opcion =True
+	while opcion:
+		pubsub = r.pubsub()
+		pubsub.subscribe(canal_subasta)
+		for item in pubsub.listen():
+			print item['data']
+			time.sleep( 60 )
+			pubsub.unsubscribe()
+			
+
+		nombre_ganador=raw_input("Ingrese el nombre del ganador")
+		
+		canal=canal_subasta
+	   	mensaje="El ganador es: "+nombre_ganador
+	   	r.publish(canal, mensaje)
+	   	menu_principal(nombre_subastador)
 
 
 

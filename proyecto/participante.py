@@ -1,15 +1,17 @@
 from pub import *
 from sub import *
 from settings import r
+import time
 
-nombre_subastador=""
+
+nombre_participante=""
 canales=[]
 nombre_producto=""
 precio_producto=""
 
 
 	
-def menu(nombre_subastador):
+def menu(nombre_participante):
 	print ("*************************************************************")
 	print ("*************************************************************")
 	print ("***********************BIENVENIDO/A SUBASTAS ON_LINE*********")
@@ -18,69 +20,88 @@ def menu(nombre_subastador):
 	opcion=True
 	while opcion:
 	   
-	    nombre_subastador=raw_input("Ingrese su nombre\n") 
-	    if nombre_subastador=="": 
+	    nombre_participante=raw_input("Ingrese su nombre\n") 
+	    if nombre_participante=="": 
 	      print("\n Ingrese un nombre valido") 
 	    else:
-	      menu_principal(nombre_subastador)
+	      menu_principal(nombre_participante)
 
-def menu_principal(nombre_subastador):
+def menu_principal(nombre_participante):
 	print ("***************************************************************")
 	print ("***************************************************************")
-	print ("**************BIENVENIDO SUBASTADOR "+nombre_subastador+"******")
+	print ("************BIENVENIDO PARTICIPANTE "+nombre_participante+"****")
 	print ("***************************************************************")
 	print ("***************************************************************")
 	opcion=True
 	while opcion:
 	    print ("""
-	    1.Crear una subasta
+	    1.Participar en una subasta
 	    2.Salir
 	    """)
 	    opcion=raw_input("Ingrese una opcion ") 
 	    if opcion=="1": 
-	      crear_subasta(nombre_subastador)
+	      ver_subasta(nombre_participante)
 	    elif opcion=="2":
 	      print("\n Goodbye") 
 	      quit()
 	    elif opcion!="":
 	      print("\n Ingrese una opcion valida")
 
-def crear_subasta(nombre_subastador):
+def ver_subasta(nombre_participante):
 	print ("*************************************************************")
 	print ("*************************************************************")
-	print ("*********************** SUBASTAS*****************************")
+	print ("***********************SUBASTA*******************************")
 	print ("*************************************************************")
-	print ("*************************************************************")
-	opcion =True
-	while opcion:
-
-	   	print ("Ingrese <salir> para regresar")
-	   	canal_subasta=raw_input("Ingrese un nombre para la subasta\n")
-	   	if canal_subasta=="":
-	   		print("\n Ingrese un nombre valido")
-	   	elif canal_subasta=="salir":
-	   		menu_principal(nombre_subastador)
-	   	else:
-	   		canal="subastas"
-	   		mensaje="Subasta "+canal_subasta+"creada por"+nombre_subastador+"esta abierta"
-	   		r.publish(canal, mensaje)
-	   		ver_subastas(canal, mensaje,canal_subasta)
-
-def ver_subastas(canal,mensaje,canal_subasta):
-	print ("*************************************************************")
-	print ("*************************************************************")
-	print ("***********************MI SUBASTA****************************")
-	print ("*************************"+canal_subasta+"*****************")
 	print ("*************************************************************")
 	
+	
 	pubsub = r.pubsub()
-	pubsub.subscribe("canal_subasta")
-	while True:
-		for item in pubsub.listen():
-			print item['data']
+	pubsub.subscribe("subastas")
+	for item in pubsub.listen():
+		print item['data']
+		time.sleep( 20 )
+		pubsub.unsubscribe()
+
+	nombre_subasta=raw_input("Ingrese el nombre de la subasta que desee participar o salir si no desea participar\n") 
+	if nombre_participante=="": 
+	  print("\n Ingrese un nombre valido") 
+	elif nombre_subasta=="salir":
+		menu_principal(nombre_participante)
+	else:
+	  crear_puja(nombre_participante,nombre_subasta)
+
+def crear_puja(nombre_participante,nombre_subasta):
+	print ("*************************************************************")
+	print ("*************************************************************")
+	print ("***********************SUBASTA****************************")
+	print ("*************************"+nombre_subasta+"*****************")
+	print ("*************************************************************")
+	print ("Ingrese <salir> para regresar")
+	
+	opcion =True
+	while opcion:
+		puja=raw_input("Ingrese su oferta\n")
+		
+		if puja =="salir":
+			menu_principal(nombre_subastador)
+		else:
+			if puja=="":
+				print("\n Ingrese informacion valida")
+			else:
+		   		mensaje=nombre_participante+" ofrece: "+puja+"\n"
+		   		r.publish(nombre_subasta, mensaje)
+
+		   		pubsub = r.pubsub()
+				pubsub.subscribe(nombre_subasta)
+				for item in pubsub.listen():
+					print item['data']
+					time.sleep( 20 )
+					pubsub.unsubscribe()
+
+		   		
 
 
 
 
 if __name__ == '__main__':
-	menu(nombre_subastador)
+	menu(nombre_participante)
