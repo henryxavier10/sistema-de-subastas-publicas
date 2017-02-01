@@ -1,1 +1,0 @@
-subastas.Subscriber
