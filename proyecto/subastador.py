@@ -86,7 +86,7 @@ def ver_subastas(canal,mensaje,canal_subasta,nombre_subastador):
 		else:
 			print item['data']
 			participantes.append(str(item['data']))
-		time.sleep( 50 )
+		time.sleep( 40 )
 		pubsub.unsubscribe()
 
 	print ("*************************************************************")

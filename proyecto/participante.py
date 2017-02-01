@@ -101,9 +101,7 @@ def crear_puja(nombre_participante,nombre_subasta):
 		else:
 			print item['data']
 			if len(str(item['data'])) > 1:
-				comnezar_subasta(nombre_participante,nombre_subasta)
-		time.sleep( 10 )
-		pubsub.unsubscribe()
+				comenzar_subasta(nombre_participante,nombre_subasta)
 		   		
 		   		#pubsub = r.pubsub()
 				#pubsub.subscribe(nombre_subasta)
