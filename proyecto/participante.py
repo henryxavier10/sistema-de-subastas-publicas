@@ -68,7 +68,9 @@ def ver_subasta(nombre_participante):
 	elif nombre_subasta=="salir":
 		menu_principal(nombre_participante)
 	else:
-	  crear_puja(nombre_participante,nombre_subasta)
+		mensaje=nombre_participante
+   		r.publish(nombre_subasta, mensaje)
+   		crear_puja(nombre_participante,nombre_subasta)
 
 def crear_puja(nombre_participante,nombre_subasta):
 	print ("*************************************************************")

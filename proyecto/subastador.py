@@ -75,8 +75,20 @@ def ver_subastas(canal,mensaje,canal_subasta,nombre_subastador):
 	print ("*************************"+canal_subasta+"*****************")
 	print ("*************************************************************")
 	print ("Ingrese <salir> para regresar")
-	
+	print ("Esperando participantes>>>>>")
 	opcion =True
+	participantes=[]
+	pubsub = r.pubsub()
+	pubsub.subscribe(canal_subasta)
+	for item in pubsub.listen():
+		print item['data']
+		participantes.append(item['data'])
+		time.sleep( 15 )
+		pubsub.unsubscribe()
+
+		
+
+	print ("*************************************************************")
 	while opcion:
 		producto=raw_input("Ingrese descripcion del producto\n")
 		precio=raw_input("Ingrese precio del producto\n")
@@ -101,10 +113,13 @@ def ver_pujas(canal,mensaje,canal_subasta,nombre_subastador):
 	pubsub = r.pubsub()
 	pubsub.subscribe(canal_subasta)
 	for item in pubsub.listen():
-		print item['data']
-
-		time.sleep( 60 )
-		pubsub.unsubscribe()
+		if item['data']!= "salir":
+			print item['data']
+		else:
+			pubsub.unsubscribe()
+		
+		#time.sleep( 60 )
+		#pubsub.unsubscribe()
 		
 
 	nombre_ganador=raw_input("Ingrese el nombre del ganador: ")	
