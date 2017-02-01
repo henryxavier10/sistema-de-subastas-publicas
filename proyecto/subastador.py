@@ -64,7 +64,7 @@ def crear_subasta(nombre_subastador):
 	   		menu_principal(nombre_subastador)
 	   	else:
 	   		canal="subastas"
-	   		mensaje="Subasta "+canal_subasta+" creada por "+nombre_subastador+" esta abierta"
+	   		mensaje="Subasta "+canal_subasta+" creada por "+nombre_subastador
 	   		r.publish(canal, mensaje)
 	   		ver_subastas(canal, mensaje,canal_subasta,nombre_subastador)
 
@@ -75,18 +75,19 @@ def ver_subastas(canal,mensaje,canal_subasta,nombre_subastador):
 	print ("*************************"+canal_subasta+"*****************")
 	print ("*************************************************************")
 	print ("Ingrese <salir> para regresar")
-	print ("Esperando participantes>>>>>")
+	
 	opcion =True
 	participantes=[]
 	pubsub = r.pubsub()
-	pubsub.subscribe(canal_subasta)
+	pubsub.subscribe(canal_subasta+"subasta")
 	for item in pubsub.listen():
-		print item['data']
-		participantes.append(item['data'])
-		time.sleep( 15 )
+		if item['data'] == 1:
+			print ("Esperando participantes>>>>>")
+		else:
+			print item['data']
+			participantes.append(str(item['data']))
+		time.sleep( 50 )
 		pubsub.unsubscribe()
-
-		
 
 	print ("*************************************************************")
 	while opcion:
