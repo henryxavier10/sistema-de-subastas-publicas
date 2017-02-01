@@ -3,6 +3,7 @@ from sub import *
 from settings import r
 import time 
 
+
 nombre_subastador=""
 canales=[]
 nombre_producto=""
@@ -97,19 +98,20 @@ def ver_pujas(canal,mensaje,canal_subasta,nombre_subastador):
 	print ("***********************ESPERANDO PUJAS***********************")
 	print ("*************************"+canal_subasta+"*****************")
 	print ("*************************************************************")
-	con=0
-	opcion =True
-	while opcion:
-		pubsub = r.pubsub()
-		pubsub.subscribe(canal_subasta)
-		for item in pubsub.listen():
-			print item['data']
-			time.sleep( 60 )
-			pubsub.unsubscribe()
-			
+	pubsub = r.pubsub()
+	pubsub.subscribe(canal_subasta)
+	for item in pubsub.listen():
+		print item['data']
 
-		nombre_ganador=raw_input("Ingrese el nombre del ganador")
+		time.sleep( 60 )
+		pubsub.unsubscribe()
 		
+
+	nombre_ganador=raw_input("Ingrese el nombre del ganador: ")	
+	
+	if nombre_ganador == "":
+		menu_principal(nombre_subastador)
+	else:
 		canal=canal_subasta
 	   	mensaje="El ganador es: "+nombre_ganador
 	   	r.publish(canal, mensaje)

@@ -59,7 +59,7 @@ def ver_subasta(nombre_participante):
 	pubsub.subscribe("subastas")
 	for item in pubsub.listen():
 		print item['data']
-		time.sleep( 20 )
+		time.sleep( 15 )
 		pubsub.unsubscribe()
 
 	nombre_subasta=raw_input("Ingrese el nombre de la subasta que desee participar o salir si no desea participar\n") 
@@ -77,13 +77,20 @@ def crear_puja(nombre_participante,nombre_subasta):
 	print ("*************************"+nombre_subasta+"*****************")
 	print ("*************************************************************")
 	print ("Ingrese <salir> para regresar")
+
+	pubsub = r.pubsub()
+	pubsub.subscribe(nombre_subasta)
+	for item in pubsub.listen():
+		print item['data']
+		time.sleep( 10 )
+		pubsub.unsubscribe()
 	
 	opcion =True
 	while opcion:
 		puja=raw_input("Ingrese su oferta\n")
 		
 		if puja =="salir":
-			menu_principal(nombre_subastador)
+			menu_principal(nombre_participante)
 		else:
 			if puja=="":
 				print("\n Ingrese informacion valida")
@@ -91,12 +98,13 @@ def crear_puja(nombre_participante,nombre_subasta):
 		   		mensaje=nombre_participante+" ofrece: "+puja+"\n"
 		   		r.publish(nombre_subasta, mensaje)
 
-		   		pubsub = r.pubsub()
-				pubsub.subscribe(nombre_subasta)
-				for item in pubsub.listen():
-					print item['data']
-					time.sleep( 20 )
-					pubsub.unsubscribe()
+		   		
+		   		#pubsub = r.pubsub()
+				#pubsub.subscribe(nombre_subasta)
+				#for item in pubsub.listen():
+				#	print item['data']
+				#time.sleep( 20 )
+				#pubsub.unsubscribe()
 
 		   		
 
