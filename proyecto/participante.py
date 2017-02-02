@@ -36,14 +36,17 @@ def menu_principal(nombre_participante):
 	while opcion:
 	    print ("""
 	    1.Participar en una subasta
-	    2.Salir
+	    2.Ver Resultado
+	    3.-Salir
 	    """)
 	    opcion=raw_input("Ingrese una opcion ") 
 	    if opcion=="1": 
 	      ver_subasta(nombre_participante)
 	    elif opcion=="2":
-	      print("\n Goodbye") 
-	      quit()
+	    	print("\n Resultados") 
+	    elif opcion=="3":
+	    	print("\n Goodbye")
+	    	quit()
 	    elif opcion!="":
 	      print("\n Ingrese una opcion valida")
 
@@ -83,8 +86,8 @@ def ver_subasta(nombre_participante):
 def crear_puja(nombre_participante,nombre_subasta):
 	print ("*************************************************************")
 	print ("*************************************************************")
-	print ("***********************SUBASTA****************************")
-	print ("*************************"+nombre_subasta+"*****************")
+	print ("************************SUBASTA******************************")
+	print ("*******************"+nombre_subasta+"************************")
 	print ("*************************************************************")
 	print ("Ingrese <salir> para regresar")
 
@@ -111,11 +114,13 @@ def crear_puja(nombre_participante,nombre_subasta):
 		   		
 def comenzar_subasta(nombre_participante,nombre_subasta):
 	print ("***********************Comenzo la subasta*********************")
+	print ("Ingrese <salir> para regresar")
 	opcion =True
 	while opcion:
 		puja=raw_input("Ingrese su oferta\n")
 		
 		if puja =="salir":
+			r.publish(nombre_subasta, "salir")
 			menu_principal(nombre_participante)
 		else:
 			if puja=="":

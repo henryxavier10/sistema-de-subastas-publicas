@@ -87,41 +87,53 @@ def ver_subastas(canal,mensaje,canal_subasta,nombre_subastador):
 			if len(str(item['data'])) > 1:
 				print item['data']
 				participantes.append(str(item['data']))
-		time.sleep( 30 )
+		time.sleep( 15 )
 		pubsub.unsubscribe()
 
-	print ("*************************************************************")
-	while opcion:
-		producto=raw_input("Ingrese descripcion del producto\n")
-		
-		if producto =="salir":
-			menu_principal(nombre_subastador)
-		else:
-			precio=raw_input("Ingrese precio del producto\n")
-			if producto=="" or precio=="":
-				print("\n Ingrese informacion valida")
+	if len(participantes)>0:		
+		print ("*************************************************************")
+		while opcion:
+			producto=raw_input("Ingrese descripcion del producto\n")
+			
+			if producto =="salir":
+				menu_principal(nombre_subastador)
 			else:
-		   		mensaje="Procducto: "+producto+"\nPrecio: "+precio
-		   		r.publish(canal_subasta, mensaje)
-		   		ver_pujas(canal,mensaje,canal_subasta,nombre_subastador)
+				precio=raw_input("Ingrese precio del producto\n")
+				if producto=="" or precio=="":
+					print("\n Ingrese informacion valida")
+				else:
+			   		mensaje="Procducto: "+producto+"\nPrecio: "+precio
+			   		r.publish(canal_subasta, mensaje)
+			   		ver_pujas(canal,mensaje,canal_subasta,nombre_subastador,participantes)
+	else:
+		print ("No hay participantes ")
+		menu_principal(nombre_subastador)
 
 
-def ver_pujas(canal,mensaje,canal_subasta,nombre_subastador):
+def ver_pujas(canal,mensaje,canal_subasta,nombre_subastador,participantes):
 	print ("*************************************************************")
 	print ("*************************************************************")
-	print ("***********************ESPERANDO PUJAS***********************")
-	print ("*************************"+canal_subasta+"*****************")
+	print ("**********************"+canal_subasta+"**********************")
+	print ("**************************PUJAS******************************")
 	print ("*************************************************************")
+	lista_salir=[]
 	pubsub = r.pubsub()
 	pubsub.subscribe(canal_subasta)
 	for item in pubsub.listen():
-		if item['data']!= "salir":
-			print item['data']
+		if item['data']== "salir":
+			lista_salir.append(str(item['data']))
+			if len(lista_salir)==len(participantes):
+				pubsub.unsubscribe()
 		else:
-			pubsub.unsubscribe()
+			if item['data'] ==1:
+				print ("Esperando pujas>>>>>")
+			elif item['data'] ==0:
+				print ("Termino pujas>>>>>")
+			else:
+				print item['data']
 		
-		#time.sleep( 60 )
-		#pubsub.unsubscribe()
+		time.sleep( 60 )
+		pubsub.unsubscribe()
 		
 
 	nombre_ganador=raw_input("Ingrese el nombre del ganador: ")	
