@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# Este archivo usa el encoding: utf-8
+
 from pub import *
 from sub import *
 from settings import r

@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# Este archivo usa el encoding: utf-8
+
+
 from pub import *
 from sub import *
 from settings import r
@@ -22,7 +26,7 @@ def menu(nombre_subastador):
 	   
 	    nombre_subastador=raw_input("Ingrese su nombre\n") 
 	    if nombre_subastador=="": 
-	      print("\n Ingrese un nombre valido") 
+	      print("\n Ingrese un nombre válido") 
 	    else:
 	      menu_principal(nombre_subastador)
 
@@ -45,7 +49,7 @@ def menu_principal(nombre_subastador):
 	      print("\n Goodbye") 
 	      quit()
 	    elif opcion!="":
-	      print("\n Ingrese una opcion valida")
+	      print("\n Ingrese una opción válida")
 
 def crear_subasta(nombre_subastador):
 	print ("*************************************************************")
