@@ -84,19 +84,20 @@ def ver_subastas(canal,mensaje,canal_subasta,nombre_subastador):
 		if item['data'] == 1:
 			print ("Esperando participantes>>>>>")
 		else:
-			print item['data']
-			participantes.append(str(item['data']))
-		time.sleep( 40 )
+			if len(str(item['data'])) > 1:
+				print item['data']
+				participantes.append(str(item['data']))
+		time.sleep( 30 )
 		pubsub.unsubscribe()
 
 	print ("*************************************************************")
 	while opcion:
 		producto=raw_input("Ingrese descripcion del producto\n")
-		precio=raw_input("Ingrese precio del producto\n")
 		
-		if producto =="salir" or precio =="salir":
+		if producto =="salir":
 			menu_principal(nombre_subastador)
 		else:
+			precio=raw_input("Ingrese precio del producto\n")
 			if producto=="" or precio=="":
 				print("\n Ingrese informacion valida")
 			else:

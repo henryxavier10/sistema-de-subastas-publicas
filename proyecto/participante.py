@@ -59,14 +59,12 @@ def ver_subasta(nombre_participante):
 	pubsub.subscribe("subastas")
 	for item in pubsub.listen():
 		if item['data'] == 1:
-			print ("Esperando las subastas creadas>>>>>>>>>>>>>>>>>>>>")
+			print ("Esperando la subasta creada>>>>>>>>>>>>>>>>>>>>")
 		else:
 			if len(str(item['data'])) > 1:
 				print item['data']
 				subastas.append(str(item['data']))
-				
-		time.sleep( 15 )
-		pubsub.unsubscribe()
+				pubsub.unsubscribe()
 
 	if len(subastas)>0:
 		nombre_subasta=raw_input("Ingrese el nombre de la subasta que desee participar o salir si no desea participar\n") 
