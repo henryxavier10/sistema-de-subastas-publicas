@@ -25,7 +25,7 @@ def menu(nombre_participante):
 	   
 	    nombre_participante=raw_input("Ingrese su nombre\n") 
 	    if nombre_participante=="": 
-	      print("\n Ingrese un nombre valido") 
+	      print("\n Ingrese un nombre válido") 
 	    else:
 	      menu_principal(nombre_participante)
 
@@ -41,14 +41,14 @@ def menu_principal(nombre_participante):
 	    1.Participar en una subasta
 	    2.-Salir
 	    """)
-	    opcion=raw_input("Ingrese una opcion ") 
+	    opcion=raw_input("Ingrese una opción ") 
 	    if opcion=="1": 
 	      ver_subasta(nombre_participante)
 	    elif opcion=="2":
 	    	print("\n Goodbye")
 	    	quit()
 	    elif opcion!="":
-	      print("\n Ingrese una opcion valida")
+	      print("\n Ingrese una opcion válida")
 
 def ver_subasta(nombre_participante):
 	print ("*************************************************************")
@@ -70,7 +70,7 @@ def ver_subasta(nombre_participante):
 				pubsub.unsubscribe()
 
 	if len(subastas)>0:
-		nombre_subasta=raw_input("Ingrese el nombre de la subasta que desee participar o salir si no desea participar\n") 
+		nombre_subasta=raw_input("Ingrese el nombre de la subasta que desee participar o salir\n") 
 		if nombre_participante=="": 
 		  print("\n Ingrese un nombre valido") 
 		elif nombre_subasta=="salir":
@@ -127,7 +127,7 @@ def comenzar_subasta(nombre_participante,nombre_subasta):
 			ver_resultado(nombre_participante,nombre_subasta)
 		else:
 			if puja=="":
-				print("\n Ingrese informacion valida")
+				print("\n Ingrese información válida")
 			else:
 		   		mensaje=nombre_participante+" ofrece: "+puja+"\n"
 		   		r.publish(nombre_subasta, mensaje)
