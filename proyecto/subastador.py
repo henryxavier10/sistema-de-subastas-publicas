@@ -98,11 +98,11 @@ def ver_subastas(canal,mensaje,canal_subasta,nombre_subastador):
 			if producto =="salir":
 				menu_principal(nombre_subastador)
 			else:
-				precio=raw_input("Ingrese precio del producto\n")
+				precio=raw_input("Ingrese precio base del producto\n")
 				if producto=="" or precio=="":
 					print("\n Ingrese informacion valida")
 				else:
-			   		mensaje="Procducto: "+producto+"\nPrecio: "+precio
+			   		mensaje="Producto: "+producto+"\nPrecio base: "+precio
 			   		r.publish(canal_subasta, mensaje)
 			   		ver_pujas(canal,mensaje,canal_subasta,nombre_subastador,participantes)
 	else:
@@ -120,7 +120,7 @@ def ver_pujas(canal,mensaje,canal_subasta,nombre_subastador,participantes):
 	pubsub = r.pubsub()
 	pubsub.subscribe(canal_subasta)
 	for item in pubsub.listen():
-		if item['data']== "salir":
+		if item['data']== "terminar":
 			lista_salir.append(str(item['data']))
 			if len(lista_salir)==len(participantes):
 				pubsub.unsubscribe()
@@ -132,8 +132,7 @@ def ver_pujas(canal,mensaje,canal_subasta,nombre_subastador,participantes):
 			else:
 				print item['data']
 		
-		time.sleep( 60 )
-		pubsub.unsubscribe()
+		
 		
 
 	nombre_ganador=raw_input("Ingrese el nombre del ganador: ")	
@@ -141,7 +140,7 @@ def ver_pujas(canal,mensaje,canal_subasta,nombre_subastador,participantes):
 	if nombre_ganador == "":
 		menu_principal(nombre_subastador)
 	else:
-		canal=canal_subasta
+		canal=canal_subasta+"terminada"
 	   	mensaje="El ganador es: "+nombre_ganador
 	   	r.publish(canal, mensaje)
 	   	menu_principal(nombre_subastador)

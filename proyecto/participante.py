@@ -36,15 +36,12 @@ def menu_principal(nombre_participante):
 	while opcion:
 	    print ("""
 	    1.Participar en una subasta
-	    2.Ver Resultado
-	    3.-Salir
+	    2.-Salir
 	    """)
 	    opcion=raw_input("Ingrese una opcion ") 
 	    if opcion=="1": 
 	      ver_subasta(nombre_participante)
 	    elif opcion=="2":
-	    	print("\n Resultados") 
-	    elif opcion=="3":
 	    	print("\n Goodbye")
 	    	quit()
 	    elif opcion!="":
@@ -103,7 +100,8 @@ def crear_puja(nombre_participante,nombre_subasta):
 			print item['data']
 			if len(str(item['data'])) > 1:
 				comenzar_subasta(nombre_participante,nombre_subasta)
-		   		
+
+			
 		   		#pubsub = r.pubsub()
 				#pubsub.subscribe(nombre_subasta)
 				#for item in pubsub.listen():
@@ -113,15 +111,17 @@ def crear_puja(nombre_participante,nombre_subasta):
 
 		   		
 def comenzar_subasta(nombre_participante,nombre_subasta):
+	print ("**************************************************************")
 	print ("***********************Comenzo la subasta*********************")
-	print ("Ingrese <salir> para regresar")
+	print ("**************************************************************")
+	print ("Ingrese <terminar> para salir")
 	opcion =True
 	while opcion:
 		puja=raw_input("Ingrese su oferta\n")
 		
-		if puja =="salir":
-			r.publish(nombre_subasta, "salir")
-			menu_principal(nombre_participante)
+		if puja =="terminar":
+			r.publish(nombre_subasta, "terminar")
+			ver_resultado(nombre_participante,nombre_subasta)
 		else:
 			if puja=="":
 				print("\n Ingrese informacion valida")
@@ -130,6 +130,27 @@ def comenzar_subasta(nombre_participante,nombre_subasta):
 		   		r.publish(nombre_subasta, mensaje)
 
 
+def ver_resultado(nombre_participante,nombre_subasta):
+	print ("**************************************************************")
+	print ("***********************Resultado de la subasta****************")
+	print ("**************************************************************")
+	print ("Ingrese <salir> para regresar")
+	pubsub = r.pubsub()
+	nombre_subasta=nombre_subasta+"terminada"
+	pubsub.subscribe(nombre_subasta)
+	for item in pubsub.listen():
+		if item['data'] == 1:
+			print ("Esperando resultado de la subasta>>>>>>>>>>>>>>>>>>>>")
+		elif item['data'] == 0:
+			menu_principal(nombre_participante)
+		else:
+			if len(str(item['data'])) > 1:
+				print item['data']
+				time.sleep(4)
+				menu_principal(nombre_participante)
+
+		
+			
 
 
 if __name__ == '__main__':
